@@ -1,0 +1,21 @@
+spring:
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${POSTGRES_USER:my_admin}
+    password: ${POSTGRES_PASSWORD:my_password}
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+flyway:
+  url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+  schemas: public
+  user: ${POSTGRES_USER:my_admin}
+  password: ${POSTGRES_PASSWORD:my_password}
