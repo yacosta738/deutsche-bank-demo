@@ -27,3 +27,7 @@ jpa:
     hibernate.query.in_clause_parameter_padding: true
   hibernate:
     ddl-auto: none
+app:
+  title: demo
+  description: '@project.description@'
+  version: '@project.version@'
