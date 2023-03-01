@@ -5,6 +5,9 @@ import com.deutsche.bank.demo.dto.NaceDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+/**
+ * Mapper for the entity {@link Nace} and its DTO {@link NaceDTO}.
+ */
 @Component
 @Slf4j
 public class NaceMapper {

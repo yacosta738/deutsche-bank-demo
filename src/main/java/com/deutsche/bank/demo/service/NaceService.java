@@ -9,6 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Service class for managing Nace.
+ */
 @Service
 @Slf4j
 public class NaceService {
@@ -21,12 +24,24 @@ public class NaceService {
     this.naceMapper = naceMapper;
   }
 
+  /**
+   * Add a new Nace.
+   *
+   * @param naceDTO the entity to save.
+   * @return the persisted entity.
+   */
   @Transactional
   public Nace addNace(NaceDTO naceDTO) {
     log.info("Adding Nace: {}", naceDTO);
     return naceRepository.save(naceMapper.toEntity(naceDTO));
   }
 
+  /**
+   * Get one nace by id.
+   *
+   * @param id the id of the entity.
+   * @return the entity.
+   */
   @Transactional(readOnly = true)
   public Optional<Nace> getNaceById(Long id) {
     log.info("Finding Nace by id: {}", id);

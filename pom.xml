@@ -16,7 +16,9 @@
   <description>Demo project for Spring Boot</description>
   <properties>
     <java.version>17</java.version>
-
+    <springdoc.version>1.6.14</springdoc.version>
+    <jackson.version>2.14.2</jackson.version>
+    <testcontainers.version>1.17.6</testcontainers.version>
     <!-- Plugins versions -->
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
@@ -29,7 +31,7 @@
       <dependency>
         <groupId>org.testcontainers</groupId>
         <artifactId>testcontainers-bom</artifactId>
-        <version>1.17.6</version>
+        <version>${testcontainers.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -51,6 +53,12 @@
       <artifactId>spring-boot-starter-validation</artifactId>
     </dependency>
     <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <version>${springdoc.version}</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <scope>runtime</scope>
@@ -68,12 +76,12 @@
     <dependency>
       <artifactId>jackson-module-blackbird</artifactId>
       <groupId>com.fasterxml.jackson.module</groupId>
-      <version>2.14.2</version>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
       <artifactId>jackson-datatype-jsr310</artifactId>
-      <version>2.14.2</version>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -98,7 +106,7 @@
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>1.17.6</version>
+      <version>${testcontainers.version}</version>
       <scope>test</scope>
     </dependency>
 

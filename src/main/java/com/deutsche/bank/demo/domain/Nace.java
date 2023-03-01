@@ -9,6 +9,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+/**
+ * A Nace entity.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
