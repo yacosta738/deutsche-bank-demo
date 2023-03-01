@@ -280,4 +280,16 @@
       </plugins>
     </pluginManagement>
   </build>
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+      <!-- default Spring profiles -->
+        <spring.profiles.active>dev</spring.profiles.active>
+      </properties>
+    </profile>
+  </profiles>
 </project>
