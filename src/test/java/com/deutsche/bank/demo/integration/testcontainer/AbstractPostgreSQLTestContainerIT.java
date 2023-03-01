@@ -1,4 +1,4 @@
-package com.deutsche.bank.demo.testcontainer;
+package com.deutsche.bank.demo.integration.testcontainer;
 
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;

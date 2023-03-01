@@ -4,6 +4,7 @@ import com.deutsche.bank.demo.domain.Nace;
 import com.deutsche.bank.demo.dto.NaceDTO;
 import com.deutsche.bank.demo.dto.mapper.NaceMapper;
 import com.deutsche.bank.demo.repository.NaceRepository;
+import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,5 +25,11 @@ public class NaceService {
   public Nace addNace(NaceDTO naceDTO) {
     log.info("Adding Nace: {}", naceDTO);
     return naceRepository.save(naceMapper.toEntity(naceDTO));
+  }
+
+  @Transactional(readOnly = true)
+  public Optional<Nace> getNaceById(Long id) {
+    log.info("Finding Nace by id: {}", id);
+    return naceRepository.findById(id);
   }
 }
