@@ -145,10 +145,8 @@
         <artifactId>jacoco-maven-plugin</artifactId>
         <configuration>
           <excludes>
-            <exclude>**/com/ecommerce/**/dto/**</exclude>
-            <exclude>**/com/ecommerce/**/config/**</exclude>
-            <exclude>**/com/ecommerce/**/entities/**</exclude>
-            <exclude>**/com/ecommerce/**/exceptions/**</exclude>
+            <exclude>**/com/deutsche/**/config/**</exclude>
+            <exclude>**/com/deutsche/**/exceptions/**</exclude>
           </excludes>
         </configuration>
       </plugin>
