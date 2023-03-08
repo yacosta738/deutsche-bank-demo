@@ -105,7 +105,6 @@ public class ControllerExceptionHandler {
   @ExceptionHandler(Exception.class)
   protected ResponseEntity<ApiError> handleUnknownException(Exception e) {
     log.error("Internal error \uD83D\uDEA8", e);
-    System.out.println(e.getClass());
 
     ApiError apiError =
         new ApiError(
