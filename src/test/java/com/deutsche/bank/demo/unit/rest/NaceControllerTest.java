@@ -31,8 +31,6 @@ class NaceControllerTest {
   private MockMvc mvc;
 
   @MockBean
-  private NaceMapper naceMapper;
-  @MockBean
   private NaceService naceService;
 
   private ObjectMapper objectMapper;
