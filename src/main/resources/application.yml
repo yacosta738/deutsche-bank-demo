@@ -28,3 +28,10 @@ app:
   title: demo
   description: '@project.description@'
   version: '@project.version@'
+# swagger-ui custom path
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui

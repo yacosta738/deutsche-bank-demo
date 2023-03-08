@@ -19,6 +19,9 @@ Java 17 or higher
 2. Run `./mvnw test`
 3. Enjoy!
 
+## Documentation
+The documentation is available at [Swagger UI](http://localhost:8080/doc/swagger-ui/index.html)
+
 ## Example of curl request
 Create a new NACE record
 
