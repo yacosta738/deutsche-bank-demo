@@ -47,4 +47,16 @@ public class NaceService {
     log.info("Finding Nace by id: {}", id);
     return naceRepository.findById(id);
   }
+
+  /**
+   * Get one nace by code.
+   *
+   * @param code the code of the entity.
+   * @return the entity.
+   */
+  @Transactional(readOnly = true)
+  public Optional<Nace> getNaceByCode(String code) {
+    log.info("Finding Nace by code: {}", code);
+    return naceRepository.findByCode(code);
+  }
 }

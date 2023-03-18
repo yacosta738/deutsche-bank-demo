@@ -7,6 +7,8 @@ import com.deutsche.bank.demo.integration.testcontainer.AbstractPostgreSQLTestCo
 import com.deutsche.bank.demo.repository.NaceRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Optional;
+
 class NaceRepositoryTest extends AbstractPostgreSQLTestContainerIT {
   @Autowired
   private NaceRepository naceRepository;
@@ -37,5 +39,33 @@ class NaceRepositoryTest extends AbstractPostgreSQLTestContainerIT {
     assertEquals(nace.getExcludes(), n.getExcludes());
     assertEquals(nace.getReference(), n.getReference());
 
+  }
+
+  @Test
+  void testFindNaceByCode() {
+    Nace nace = Nace.builder()
+        .id(1L)
+        .level(1)
+        .code("code")
+        .parent("parent")
+        .description("description")
+        .includes("includes")
+        .alsoIncludes("alsoIncludes")
+        .rulings("rulings")
+        .excludes("excludes")
+        .reference("reference")
+        .build();
+    naceRepository.save(nace);
+    Optional<Nace> naceOptional = naceRepository.findByCode("code");
+    assertEquals(nace.getId(), naceOptional.get().getId());
+    assertEquals(nace.getLevel(), naceOptional.get().getLevel());
+    assertEquals(nace.getCode(), naceOptional.get().getCode());
+    assertEquals(nace.getParent(), naceOptional.get().getParent());
+    assertEquals(nace.getDescription(), naceOptional.get().getDescription());
+    assertEquals(nace.getIncludes(), naceOptional.get().getIncludes());
+    assertEquals(nace.getAlsoIncludes(), naceOptional.get().getAlsoIncludes());
+    assertEquals(nace.getRulings(), naceOptional.get().getRulings());
+    assertEquals(nace.getExcludes(), naceOptional.get().getExcludes());
+    assertEquals(nace.getReference(), naceOptional.get().getReference());
   }
 }

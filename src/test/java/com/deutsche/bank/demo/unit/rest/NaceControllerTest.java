@@ -269,4 +269,28 @@ class NaceControllerTest {
     mvc.perform(get("/nace/13342"))
         .andExpect(status().isNotFound());
   }
+
+  @Test
+  void findNaceByCode() throws Exception {
+    when(naceService.getNaceByCode("code")).thenReturn(Optional.of(nace));
+    mvc.perform(get("/nace/code/code"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.id", is(1)))
+        .andExpect(jsonPath("$.level", is(1)))
+        .andExpect(jsonPath("$.code", is("code")))
+        .andExpect(jsonPath("$.parent", is("parent")))
+        .andExpect(jsonPath("$.description", is("description")))
+        .andExpect(jsonPath("$.includes", is("includes")))
+        .andExpect(jsonPath("$.alsoIncludes", is("alsoIncludes")))
+        .andExpect(jsonPath("$.rulings", is("rulings")))
+        .andExpect(jsonPath("$.excludes", is("excludes")))
+        .andExpect(jsonPath("$.reference", is("reference")));
+  }
+
+  @Test
+  void findNaceByCodeNotFound() throws Exception {
+    when(naceService.getNaceByCode("code")).thenReturn(Optional.empty());
+    mvc.perform(get("/nace/code/13342"))
+        .andExpect(status().isNotFound());
+  }
 }
