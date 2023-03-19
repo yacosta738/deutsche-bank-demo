@@ -75,4 +75,13 @@ class NaceServiceTest {
     Nace n = naceById.get();
     assertThat(n).isEqualTo(nace);
   }
+
+  @Test
+  void getNaceByCode() {
+    when(naceRepository.findByCode(any(String.class))).thenReturn(Optional.of(nace));
+    Optional<Nace> naceByCode = naceService.getNaceByCode("code");
+    assertThat(naceByCode).isPresent();
+    Nace n = naceByCode.get();
+    assertThat(n).isEqualTo(nace);
+  }
 }

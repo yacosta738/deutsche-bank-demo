@@ -232,4 +232,41 @@ class NaceControllerTest extends TestController {
         Nace.class);
     assertEquals(404, naceResponseEntity.getStatusCode().value());
   }
+
+  @Test
+  void findNaceByCodeAfterSaved(){
+    NaceDTO naceDTO = NaceDTO.builder()
+        .level(45)
+        .code("AA")
+        .parent("BB")
+        .description("CC")
+        .includes("DD")
+        .alsoIncludes("EE")
+        .rulings("FF")
+        .excludes("GG")
+        .reference("HH")
+        .build();
+    testRestTemplate.postForEntity("/nace", naceDTO, Nace.class);
+    ResponseEntity<Nace> naceResponseEntity = testRestTemplate.getForEntity("/nace/c/AA",
+        Nace.class);
+    assertEquals(200, naceResponseEntity.getStatusCode().value());
+    Nace naceFound = naceResponseEntity.getBody();
+    assertNotNull(naceFound);
+    assertEquals(naceDTO.getLevel(), naceFound.getLevel());
+    assertEquals(naceDTO.getCode(), naceFound.getCode());
+    assertEquals(naceDTO.getParent(), naceFound.getParent());
+    assertEquals(naceDTO.getDescription(), naceFound.getDescription());
+    assertEquals(naceDTO.getIncludes(), naceFound.getIncludes());
+    assertEquals(naceDTO.getAlsoIncludes(), naceFound.getAlsoIncludes());
+    assertEquals(naceDTO.getRulings(), naceFound.getRulings());
+    assertEquals(naceDTO.getExcludes(), naceFound.getExcludes());
+    assertEquals(naceDTO.getReference(), naceFound.getReference());
+  }
+
+  @Test
+  void findNaceByCodeNotFound() {
+    ResponseEntity<Nace> naceResponseEntity = testRestTemplate.getForEntity("/nace/c/146232",
+        Nace.class);
+    assertEquals(404, naceResponseEntity.getStatusCode().value());
+  }
 }

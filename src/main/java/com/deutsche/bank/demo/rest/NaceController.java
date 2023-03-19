@@ -67,4 +67,26 @@ public class NaceController {
     }
     return ResponseEntity.ok(nace);
   }
+
+  /**
+   * {@code GET  /nace/c/:code} : get the "code" nace.
+   * @param code the code of the nace to retrieve.
+   * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the nace, or with status {@code 404 (Not Found)}.
+   */
+  @Operation(summary = "Get Nace by code")
+  @ApiResponses(
+      value = {
+          @ApiResponse(responseCode = "200", description = "Nace found"),
+          @ApiResponse(responseCode = "404", description = "Nace not found"),
+          @ApiResponse(responseCode = "500", description = "Internal server error")
+      })
+  @GetMapping("/nace/c/{code}")
+  public ResponseEntity<Nace> getNaceByCode(@PathVariable String code) {
+    log.info("Getting Nace by code: {}", code);
+    Nace nace = naceService.getNaceByCode(code).orElse(null);
+    if (nace == null) {
+      return ResponseEntity.notFound().build();
+    }
+    return ResponseEntity.ok(nace);
+  }
 }
