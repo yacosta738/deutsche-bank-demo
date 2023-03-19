@@ -234,36 +234,33 @@ class NaceControllerTest extends TestController {
   }
 
   @Test
-  void findNaceByCode() {
+  void findNaceByCodeAfterSaved(){
     NaceDTO naceDTO = NaceDTO.builder()
-        .level(1)
-        .code("A")
-        .parent("B")
-        .description("C")
-        .includes("D")
-        .alsoIncludes("E")
-        .rulings("F")
-        .excludes("G")
-        .reference("H")
+        .level(45)
+        .code("AA")
+        .parent("BB")
+        .description("CC")
+        .includes("DD")
+        .alsoIncludes("EE")
+        .rulings("FF")
+        .excludes("GG")
+        .reference("HH")
         .build();
-    ResponseEntity<Nace> storeEntity = testRestTemplate.postForEntity("/nace", naceDTO,
-        Nace.class);
-    Nace nace = Objects.requireNonNull(
-        storeEntity.getBody());
-    ResponseEntity<Nace> naceResponseEntity = testRestTemplate.getForEntity("/nace/c/" + nace.getCode(),
+    testRestTemplate.postForEntity("/nace", naceDTO, Nace.class);
+    ResponseEntity<Nace> naceResponseEntity = testRestTemplate.getForEntity("/nace/c/AA",
         Nace.class);
     assertEquals(200, naceResponseEntity.getStatusCode().value());
     Nace naceFound = naceResponseEntity.getBody();
     assertNotNull(naceFound);
-    assertEquals(nace.getLevel(), naceFound.getLevel());
-    assertEquals(nace.getCode(), naceFound.getCode());
-    assertEquals(nace.getParent(), naceFound.getParent());
-    assertEquals(nace.getDescription(), naceFound.getDescription());
-    assertEquals(nace.getIncludes(), naceFound.getIncludes());
-    assertEquals(nace.getAlsoIncludes(), naceFound.getAlsoIncludes());
-    assertEquals(nace.getRulings(), naceFound.getRulings());
-    assertEquals(nace.getExcludes(), naceFound.getExcludes());
-    assertEquals(nace.getReference(), naceFound.getReference());
+    assertEquals(naceDTO.getLevel(), naceFound.getLevel());
+    assertEquals(naceDTO.getCode(), naceFound.getCode());
+    assertEquals(naceDTO.getParent(), naceFound.getParent());
+    assertEquals(naceDTO.getDescription(), naceFound.getDescription());
+    assertEquals(naceDTO.getIncludes(), naceFound.getIncludes());
+    assertEquals(naceDTO.getAlsoIncludes(), naceFound.getAlsoIncludes());
+    assertEquals(naceDTO.getRulings(), naceFound.getRulings());
+    assertEquals(naceDTO.getExcludes(), naceFound.getExcludes());
+    assertEquals(naceDTO.getReference(), naceFound.getReference());
   }
 
   @Test
