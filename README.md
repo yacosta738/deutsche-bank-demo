@@ -1,5 +1,16 @@
 [![Java CI](https://github.com/yacosta738/deutsche-bank-demo/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/yacosta738/deutsche-bank-demo/actions/workflows/ci-cd.yml)
 ![coverage](.github/badges/jacoco.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=bugs)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=yacosta738_deutsche-bank-demo&metric=coverage)](https://sonarcloud.io/summary/new_code?id=yacosta738_deutsche-bank-demo)
 
 # deutsche-bank-demo
 
