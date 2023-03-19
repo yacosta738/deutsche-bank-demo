@@ -21,9 +21,10 @@ Java 17 or higher
 
 ## How to run
 1. Clone the project
-2. Run `./mvnw spring-boot:run`
-3. Open your browser and go to `http://localhost:8080`
-4. Enjoy!
+2. Run the database with `docker-compose -f infrastructure/postgresql.yml up -d` (optional). If you don't want to use docker, you can use your own database. Just change the `spring.datasource.url` property in `application-dev.yml` file. The default database is `deutsche_bank_demo` and the default user is `my_admin` with password `my_password`.
+3. Run `./mvnw spring-boot:run`
+4. Open your browser and go to `http://localhost:8080`
+5. Enjoy!
 
 ## How to run tests
 1. Clone the project
@@ -56,4 +57,10 @@ Get a NACE record by id
 
 ```shell
 curl --location --request GET 'http://localhost:8080/nace/7'
+```
+
+Get a NACE record by code
+
+```shell
+curl --location --request GET 'http://localhost:8080/nace/c/AA'
 ```

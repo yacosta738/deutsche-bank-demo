@@ -10,7 +10,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/deutsche_bank_demo}
     username: ${POSTGRES_USER:my_admin}
     password: ${POSTGRES_PASSWORD:my_password}
     hikari:
@@ -19,7 +19,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 flyway:
-  url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+  url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/deutsche_bank_demo}
   schemas: public
   user: ${POSTGRES_USER:my_admin}
   password: ${POSTGRES_PASSWORD:my_password}
