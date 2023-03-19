@@ -273,7 +273,7 @@ class NaceControllerTest {
   @Test
   void findNaceByCode() throws Exception {
     when(naceService.getNaceByCode("code")).thenReturn(Optional.of(nace));
-    mvc.perform(get("/nace/code/code"))
+    mvc.perform(get("/nace/c/code"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.id", is(1)))
         .andExpect(jsonPath("$.level", is(1)))
@@ -290,7 +290,7 @@ class NaceControllerTest {
   @Test
   void findNaceByCodeNotFound() throws Exception {
     when(naceService.getNaceByCode("code")).thenReturn(Optional.empty());
-    mvc.perform(get("/nace/code/13342"))
+    mvc.perform(get("/nace/c/13342"))
         .andExpect(status().isNotFound());
   }
 }

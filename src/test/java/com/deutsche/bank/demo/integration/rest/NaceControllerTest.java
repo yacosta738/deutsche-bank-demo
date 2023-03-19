@@ -250,7 +250,7 @@ class NaceControllerTest extends TestController {
         Nace.class);
     Nace nace = Objects.requireNonNull(
         storeEntity.getBody());
-    ResponseEntity<Nace> naceResponseEntity = testRestTemplate.getForEntity("/nace/code/" + nace.getCode(),
+    ResponseEntity<Nace> naceResponseEntity = testRestTemplate.getForEntity("/nace/c/" + nace.getCode(),
         Nace.class);
     assertEquals(200, naceResponseEntity.getStatusCode().value());
     Nace naceFound = naceResponseEntity.getBody();
@@ -268,7 +268,7 @@ class NaceControllerTest extends TestController {
 
   @Test
   void findNaceByCodeNotFound() {
-    ResponseEntity<Nace> naceResponseEntity = testRestTemplate.getForEntity("/nace/code/146232",
+    ResponseEntity<Nace> naceResponseEntity = testRestTemplate.getForEntity("/nace/c/146232",
         Nace.class);
     assertEquals(404, naceResponseEntity.getStatusCode().value());
   }
