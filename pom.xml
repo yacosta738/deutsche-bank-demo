@@ -145,8 +145,10 @@
         <artifactId>jacoco-maven-plugin</artifactId>
         <configuration>
           <excludes>
-            <exclude>**/com/deutsche/**/config/**</exclude>
-            <exclude>**/com/deutsche/**/exceptions/**</exclude>
+            <exclude>com/deutsche/**/*DTO.*</exclude>
+            <exclude>com/deutsche/**/domain</exclude>
+            <exclude>**/config/*</exclude>
+            <exclude>com/deutsche/**/exceptions/**</exclude>
           </excludes>
         </configuration>
       </plugin>
