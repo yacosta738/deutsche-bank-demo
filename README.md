@@ -14,7 +14,7 @@
 
 # deutsche-bank-demo
 
-This is a demo project for Deutsche Bank.
+This is a demo project for Deutsche Bank. The project was made with [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) architectural pattern.
 
 ## Requirements
 Java 17 or higher
