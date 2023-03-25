@@ -33,6 +33,21 @@ public class ApiException extends RuntimeException {
   }
 
   /**
+   * Creates a new instance, with provided fields.
+   *
+   * @param code        API error code.
+   * @param description API error description.
+   * @param statusCode  API error HTTP Status code.
+   * @param cause       API error cause.
+   */
+  public ApiException(String code, String description, Integer statusCode, Throwable cause) {
+    super(description, cause);
+    this.code = code;
+    this.description = description;
+    this.statusCode = statusCode;
+  }
+
+  /**
    * @return API error code.
    */
   public String getCode() {
