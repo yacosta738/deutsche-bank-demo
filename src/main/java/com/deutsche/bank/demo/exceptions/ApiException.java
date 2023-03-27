@@ -1,12 +1,16 @@
 package com.deutsche.bank.demo.exceptions;
 
 import java.io.Serial;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /**
  * Exception containing relevant information for API errors.
  *
  * @author Yuniel Acosta
  */
+@Getter
+@AllArgsConstructor
 public class ApiException extends RuntimeException {
 
   @Serial
@@ -17,39 +21,4 @@ public class ApiException extends RuntimeException {
   private final String description;
 
   private final Integer statusCode;
-
-  /**
-   * Creates a new instance, with provided fields.
-   *
-   * @param code        API error code.
-   * @param description API error description.
-   * @param statusCode  API error HTTP Status code.
-   */
-  public ApiException(String code, String description, Integer statusCode) {
-    super(description);
-    this.code = code;
-    this.description = description;
-    this.statusCode = statusCode;
-  }
-
-  /**
-   * @return API error code.
-   */
-  public String getCode() {
-    return this.code;
-  }
-
-  /**
-   * @return API error description.
-   */
-  public String getDescription() {
-    return this.description;
-  }
-
-  /**
-   * @return API error HTTP Status code.
-   */
-  public Integer getStatusCode() {
-    return this.statusCode;
-  }
 }
