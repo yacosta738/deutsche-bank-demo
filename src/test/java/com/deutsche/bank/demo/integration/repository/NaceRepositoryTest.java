@@ -1,5 +1,6 @@
 package com.deutsche.bank.demo.integration.repository;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.deutsche.bank.demo.domain.Nace;
@@ -57,6 +58,7 @@ class NaceRepositoryTest extends AbstractPostgreSQLTestContainerIT {
         .build();
     naceRepository.save(nace);
     Optional<Nace> naceOptional = naceRepository.findByCode("code");
+    assertThat(naceOptional).isPresent();
     assertEquals(nace.getId(), naceOptional.get().getId());
     assertEquals(nace.getLevel(), naceOptional.get().getLevel());
     assertEquals(nace.getCode(), naceOptional.get().getCode());
