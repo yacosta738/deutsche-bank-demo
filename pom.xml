@@ -18,7 +18,7 @@
     <java.version>17</java.version>
     <springdoc.version>2.1.0</springdoc.version>
     <jackson.version>2.15.2</jackson.version>
-    <testcontainers.version>1.18.1</testcontainers.version>
+    <testcontainers.version>1.18.2</testcontainers.version>
     <!-- Plugins versions -->
     <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
